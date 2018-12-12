@@ -1,1 +1,1 @@
-model class 
+console.log('user class');
