@@ -7,6 +7,9 @@ let Doctor = {
             .then((result) => {
                 callback(result);
             })
+            .catch((error) => {
+                callback(error);
+            }
     }
 
 };
