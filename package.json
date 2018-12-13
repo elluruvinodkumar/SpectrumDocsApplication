@@ -6,6 +6,17 @@
     "start": "nodemon ./bin/www"
   },
   "dependencies": {
+    "bcrypt": "^1.0.2",
+    "bluebird": "^3.5.0",
+    "body-parser": "^1.17.2",
+    "express-flash-messages": "^0.1.1",
+    "express-handlebars": "^3.0.0",
+    "express-session": "^1.15.5",
+    "mongoose": "^4.11.7",
+    "mongoose-unique-validator": "^1.0.5",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "cluster": "^0.7.7",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "express": "~4.16.0",

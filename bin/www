@@ -6,7 +6,23 @@
 var app = require('../app').app;
 var debug = require('debug')('spectrum-docs-app:server');
 var http = require('http');
-
+var cluster = require('cluster'),
+    os = require('os');
+ 
+  // If in the master process, create a worker for each CPU.
+  if (cluster.isMaster) {
+    for (var i = 0; i < os.cpus().length; i += 1) {
+      cluster.fork();
+    }
+ 
+    // When process dies, replace it.
+    cluster.on('exit', function () {
+      cluster.fork();
+    });
+ 
+    return;
+  }
+  
 /**
  * Get port from environment and store in Express.
  */

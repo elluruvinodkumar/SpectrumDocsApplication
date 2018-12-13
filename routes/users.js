@@ -7,4 +7,8 @@ router.get('/', function(req, res, next) {
   res.io.emit("socketToMe", "users");
 });
 
+router.post('/', function(req,res,next) {
+  res.send('i m a post request');
+})
+
 module.exports = router;
