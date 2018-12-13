@@ -1,0 +1,88 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "Test the Spectro Doctor REST API's while in development",
+        "version": "0.1",
+        "title": "Spectro Doctor API"
+    },
+    "basePath": "/spectrodoctor",
+    "schemes": [
+        "http"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/doctor": {
+            "post": {
+                "tags": [
+                    "Doctor"
+                ],
+                "summary": "Get all patients list",
+                "description": "",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Patient's list",
+                        "required": true,
+                        "schema": {
+                            "email":"string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/List Of Patients"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "List Of Patients": {
+            "type": "object",
+            "properties": {
+                "username": {
+                    "type":"string"
+                },
+                "Email":{
+                    "type":"string"
+                },
+                "Name":{
+                    "type":"string"
+                },
+                "Gender":{
+                    "type":"string"
+                },
+                "Height":{
+                    "type":"string"
+                },
+                "Weight":{
+                    "type":"string"
+                },
+                "DOB":{
+                    "type":"string"
+                },
+                "Blood_Group":{
+                    "type":"string"
+                },
+                "AddedTime":{
+                    "type":"string"
+                },
+                "profilepic":{
+                    "type":"string"
+                }
+            }
+        }
+    }
+}

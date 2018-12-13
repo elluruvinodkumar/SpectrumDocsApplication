@@ -10,7 +10,7 @@ let Doctor = {
                 var promises = result.map(function(obj){
                     console.log('promises calling');
                     let patients;
-                    return Personaldb.findOne({username:obj.username}).then(function(results){
+                    return Personaldb.findOne({username:obj.username},{_id:false,__v:false}).then(function(results){
                        patients = results;
                        return patients;
                     })
