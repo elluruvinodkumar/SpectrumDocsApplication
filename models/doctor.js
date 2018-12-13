@@ -9,8 +9,9 @@ let Doctor = {
             })
             .catch((error) => {
                 callback(error);
-            }
+            })
     }
 
 };
+
 module.exports = Doctor;
