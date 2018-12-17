@@ -1,0 +1,13 @@
+let UrineDb = require('../app/urine');
+
+let Resultfilter = {
+
+    filterResultsByStatus : (userid,callback) => {
+        UrineDb.find({username:userid,isShared:1},{_id:0,__v:0,username:0}).exec()
+        .then((urineresults) => {
+            console.log('urine results..',urineresults);
+            callback({response:'3',testResults:urineresults});
+        })
+    }
+};
+module.exports = Resultfilter;

@@ -7,6 +7,7 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var doctorRouter = require('./routes/doctor');
+var fetchResultsRouter = require('./routes/userTestResults');
 
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger.json');
@@ -34,6 +35,7 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/spectrodoctor', doctorRouter);
+app.use('/spectrodoctor', fetchResultsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

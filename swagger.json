@@ -46,7 +46,40 @@
                     }
                 }
             }
+        },
+        "/urineresults/{userid}": {
+            "get": {
+                "tags": [
+                    "Urine Test Results"
+                ],
+                "summary": "Get the urine results list",
+                "description": "",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "userid",
+                        "description": "Username of the patient",
+                        "required": true,
+                        "type":"string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/ListOfResults"
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
         }
+
     },
     "definitions": {
         "List Of Patients": {
@@ -82,6 +115,12 @@
                 "profilepic":{
                     "type":"string"
                 }
+            }
+        },
+        "ListOfResults":{
+            "type":"object",
+            "properties":{
+                "testResults":[]
             }
         }
     }

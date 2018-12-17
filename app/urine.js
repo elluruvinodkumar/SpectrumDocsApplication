@@ -51,12 +51,14 @@ module.exports = mongoose.model('Urine', new Schema({
             required:true
         }
     }],
-
     isShared:{
         type:Boolean,
         default:false
     },
-    
+    isFasting:{
+        type:Boolean,
+        required:true
+    },
     testedTime:{
         type:String,
         required:true
