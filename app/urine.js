@@ -50,48 +50,13 @@ module.exports = mongoose.model('Urine', new Schema({
             type:String,
             required:true
         }
-    }],/*,
-    rbcValue:{
-        type:String,
-        required:true
-    },
-    billirubinValue:{
-        type:String,
-        required:true
-    },
-    urobiliogen:{
-        type:String,
-        required:true
-    },
-    ketones:{
-        type:String,
-        required:true
-    },
-    protein:{
-        type:String,
-        required:true
-    },
-    nitrite:{
-        type:String,
-        required:true
-    },
-    leokocit:{
-        type:String,
-        required:true
-    },
-    ph:{
-        type:String,
-        required:true
-    },
-    sg:{
-        type:String,
-        required:true
-    },
-    glucose:{
-        type:String,
-        required:true
-    },*/
+    }],
 
+    isShared:{
+        type:Boolean,
+        default:false
+    },
+    
     testedTime:{
         type:String,
         required:true
