@@ -1,48 +1,50 @@
 var mongoose = require('../dbconnection');
 var Schema = mongoose.Schema;
+var RegDocSchema = new Schema({
 
-// set up a mongoose model
-module.exports = mongoose.model('Personalinfo', new Schema({
-    username: {
+    email:{
         type:String,
-        unique:true,
-		index:true,
-        required:true
+        required:true,
+        unique:true
     },
-    Email:{
+    password:{
         type:String,
         required:true
     },
-    Name:{
+    otp:{
         type:String,
         required:true
     },
-    Gender:{
+    phone:{
         type:String,
         required:true
     },
-    Height:{
+    qualification:{
         type:String,
         required:true
     },
-    Weight:{
+    specialization:{
         type:String,
         required:true
     },
-    DOB:{
+    hospitalName:{
         type:String,
         required:true
     },
-    Blood_Group:{
+    address:{
+        type:[Number],
+        index:'2d',
+        required:true
+    },
+    website:{
         type:String,
         required:true
     },
-    AddedTime:{
-        type:String,
-        required:true
-    },
-    profilepic:{
+    visitingTimings:{
         type:String,
         required:true
     }
-}));
+
+});
+
+module.exports = mongoose.model('Registration',RegDocSchema);

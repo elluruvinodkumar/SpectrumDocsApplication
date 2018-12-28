@@ -1,4 +1,4 @@
-var mongoose = require('mongoose');
+var mongoose = require('../dbconnection');
 var Schema = mongoose.Schema;
 module.exports = mongoose.model('Mobile', new Schema({
     username: {

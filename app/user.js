@@ -1,8 +1,7 @@
-var mongoose = require('mongoose');
+var mongoose = require('../dbconnection');
 var Schema = mongoose.Schema;
+var Loc = new Schema({
 
-// set up a mongoose model
-module.exports = mongoose.model('User', new Schema({
     username: {
         type:String,
         unique:true,
@@ -41,4 +40,6 @@ module.exports = mongoose.model('User', new Schema({
         type:String,
         required:true
     }
-}));
+});
+
+module.exports = mongoose.model('User',Loc);

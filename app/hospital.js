@@ -1,4 +1,4 @@
-var mongoose = require('mongoose');
+var mongoose = require('../dbconnection');
 var Schema = mongoose.Schema;
 var LocationSchema = new Schema({
     address: String,
