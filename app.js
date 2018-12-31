@@ -8,6 +8,8 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var doctorRouter = require('./routes/doctor');
 var fetchResultsRouter = require('./routes/userTestResults');
+var regDoctorRouter = require('./routes/registerDoctor');
+var regDoctorVerRouter = require('./routes/regMail');
 
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger.json');
@@ -36,6 +38,8 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/spectrodoctor', doctorRouter);
 app.use('/spectrodoctor', fetchResultsRouter);
+app.use('/spectrodoctor',regDoctorRouter);
+app.use('/spectrodoctor',regDoctorVerRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

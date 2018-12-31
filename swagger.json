@@ -78,6 +78,88 @@
                     }
                 }
             }
+        },
+        "/register":{
+            "post":{
+                "tags":[
+                    "Registration"
+                ],
+                "summary":"Doctor Registration",
+                "description":"",
+                "parameters":[
+                    {
+                        "in":"body",
+                        "name":"body",
+                        "description":"Registration Data",
+                        "required":true,
+                        "schema":{
+                            "email":"string",
+                            "password":"string",
+                            "otp":"string",
+                            "phone":"string",
+                            "qualification":"string",
+                            "specialization":"string",
+                            "hospitalName":"string",
+                            "address":"string",
+                            "website":"string",
+                            "visitingTimings":"string"
+                        }
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description":"ok",
+                        "schema":{
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/DoctorData"
+                            }
+                        }
+                    }
+                }
+            }
+
+        },
+        "/verification":{
+            "post":{
+                "tags":[
+                    "Registration Mail"
+                ],
+                "summary":"Doctor Registration Verification",
+                "description":"",
+                "parameters":[
+                    {
+                        "in":"body",
+                        "name":"body",
+                        "description":"Registration Verification Data",
+                        "required":true,
+                        "schema":{
+                            "email":"string",
+                            "password":"string",
+                            "otp":"string",
+                            "phone":"string",
+                            "qualification":"string",
+                            "specialization":"string",
+                            "hospitalName":"string",
+                            "address":"string",
+                            "website":"string",
+                            "visitingTimings":"string"
+                        }
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description":"ok",
+                        "schema":{
+                            "type":"array",
+                            "items":{
+                                "$ref":"#/definitions/DoctorData"
+                            }
+                        }
+                    }
+                }
+            }
+
         }
 
     },
@@ -121,6 +203,42 @@
             "type":"object",
             "properties":{
                 "testResults":[]
+            }
+        },
+        "DoctorData":{
+            "type":"object",
+            "properties":{
+                "email":{
+                    "type":"string"
+                },
+                "password":{
+                    "type":"string"
+                },
+                "otp":{
+                    "type":"string"
+                },
+                "phone":{
+                    "type":"string"
+                },
+                "qualification":{
+                    "type":"string"
+                },
+                "specialization":{
+                    "type":"string"
+                },
+                "hospitalName":{
+                    "type":"string"
+                },
+                "address":{
+                    "type":"string"
+                },
+                "website":{
+                    "type":"string"
+                },
+                "visitingTimings":{
+                    "type":"string"
+                }
+
             }
         }
     }
